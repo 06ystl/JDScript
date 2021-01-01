@@ -33,7 +33,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           cd ~/JDScript
-          node /jd_crazy_joy_coin.js
+          node jd_crazy_joy_coin.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
