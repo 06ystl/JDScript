@@ -16,6 +16,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        BUY_JPY_LEVEL: ${{ secrets.BUY_JPY_LEVEL }} 
     steps:
       - name: Checkout
         run: |
