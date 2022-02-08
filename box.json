@@ -1,0 +1,39 @@
+{
+  "id": "06ystl.app.sub",
+  "name": "06ystl 脚本订阅",
+  "author": "@06ystl",
+  "icon": "https://avatars0.githubusercontent.com/u/9592236",
+  "repo": "https://github.com/06ystl/JDScript",
+  "apps": [
+    {
+      "id": "ql_submit",
+      "name": "青龙同步cookie",
+      "settings": [
+        {
+          "id": "06ystl_QL_api",
+          "name": "api",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "06ystl_QL_client_id",
+          "name": "client_id",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "06ystl_QL_client_secret",
+          "name": "client_secret",
+          "val": "",
+          "type": "text"
+        }
+      ],
+      "author": "@06ystl",
+      "repo": "https://github.com/06ystl/JDScript",
+      "icons": [
+        "https://github.com/06ystl/JDScript/blob/main/ql.png",
+        "https://github.com/06ystl/JDScript/blob/main/ql.png"
+      ]
+    }
+  ]
+}
