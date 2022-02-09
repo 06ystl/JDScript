@@ -1,18 +1,15 @@
 const $ = new Env('同步 Docker JDCookie');
 
 $.api = $.getData('06ystl_QL_api');
-$.token = ""
 $.client_id=$.getData('06ystl_QL_client_id');
 $.client_secret=$.getData('06ystl_QL_client_secret');
+$.token = ""
 
 !(async () => {
   try {
     $.cookieArr = [];
     await getToken()
     await getitem("JD_COOKIE")
-
-    //await getCookie();
-
     if (!$.resData) {
       $.desc = '获取数据失败';
     }
@@ -46,13 +43,11 @@ function gettimestamp() {
 }
 function getToken() {
     var url = $.api + `/open/auth/token?client_id=${$.client_id}&client_secret=${$.client_secret}`
-    console.log(url)
     return new Promise((resolve) => {
       $.get({ url: url }, (err, resp, data) => {
         try {
           if (data && data.length > 0) {
             data = JSON.parse(data);
-            
             $.token = data.data.token;
           }
         } catch (e) {
