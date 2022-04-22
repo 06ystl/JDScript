@@ -9,27 +9,12 @@ $.token = ""
   try {
     $.cookieArr = [];
     await getToken()
-    await getitem("JD_COOKIE")
+    await getitem("JD_WSCK")
     if (!$.resData) {
       $.desc = '获取数据失败';
     }
-
-    if ($.resData.length > 0) {
-        for (var i = 0; i < $.resData.length; i++) {
-            var cookie = $.resData[i].value;
-            const UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            const c = {
-                "cookie" : cookie,
-                "UserName" : UserName
-            }
-            $.cookieArr.push(c);
-        }
-      $.desc = `同步${$.cookieArr.length}条`;
-    } else {
-      $.desc = '没有新数据';
-    }
-
-    $.setData(JSON.stringify($.cookieArr, null, 2), 'CookiesJD');
+    console.log($.resData)
+    
     await showMsg();
   } catch (error) {
     $.msg($.name, '', '同步失败，请重试 ⚠️'+error);
