@@ -14,7 +14,15 @@ $.token = ""
       $.desc = '获取数据失败';
     }
     console.log($.resData)
-    
+    if ($.resData.length > 0) {
+        for (var i = 0; i < $.resData.length; i++) {
+            var cookie = $.resData[i].value;
+            console.log(cookie)
+        }
+      $.desc = `同步${$.cookieArr.length}条`;
+    } else {
+      $.desc = '没有新数据';
+    }
     await showMsg();
   } catch (error) {
     $.msg($.name, '', '同步失败，请重试 ⚠️'+error);
